@@ -222,7 +222,7 @@ void drawSinusOLD()
 	std::cout << SKIPLINE;
 }
 
-void DrawSinus()
+void drawSinus()
 {
 	std::vector<std::string> lines;
 	for (int i = 0; i < 32; i++)
