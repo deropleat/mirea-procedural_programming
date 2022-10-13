@@ -150,25 +150,6 @@ void drawFlag()
 	std::cout << std::endl;
 }
 
-void drawSinus()
-{
-	std::vector<std::string> lines;
-	for (int i = 0; i < 21; i++)
-	{
-		if (i == 0) lines.push_back(std::string(6U, 0x20) + std::string(109U, '_'));
-		else if (i == 10) lines.push_back(" -pi |" + std::string(109U, '-') + "| pi");
-		else if (i == 20) lines.push_back(std::string(5U, 0x20) + "|" + std::string(54U, '_') + "|" + std::string(54U, '_') + "|");
-		else lines.push_back(std::string(5U, 0x20) + "|" + std::string(54U, 0x20) + "|" + std::string(54U, 0x20) + "|");
-	}
-
-	size_t pos = 6U;
-	for (double i = -180.0; i <= 180.0; i += 360.0 / 109.0) lines[int(lines.size() / 2 - round(sin(ToRadians((int)i)) * 10.0))][pos++] = '*';
-
-	std::cout << std::string(60U, 0x20) << "1" << std::endl;
-	for (size_t i = 0U; i < lines.size(); i++) std::cout << lines.at(i) << std::endl;
-	std::cout << std::string(59U, 0x20) << "-1" << std::endl;
-}
-
 void drawSinusOLD()
 {
 	std::vector<std::string> strings;
