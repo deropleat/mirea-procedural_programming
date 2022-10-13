@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="safedata.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="Homeworks\CHomework1.h">
+      <Filter>Homeworks</Filter>
+    </ClInclude>
+    <ClInclude Include="Homeworks\CHomework2.h">
+      <Filter>Homeworks</Filter>
+    </ClInclude>
+    <ClInclude Include="Homeworks\CHomework3.h">
+      <Filter>Homeworks</Filter>
+    </ClInclude>
+    <ClInclude Include="Homeworks\CHomework4.h">
+      <Filter>Homeworks</Filter>
+    </ClInclude>
+    <ClInclude Include="Homeworks\CHomework5.h">
+      <Filter>Homeworks</Filter>
+    </ClInclude>
+    <ClInclude Include="Homeworks\Homework.h">
+      <Filter>Homeworks</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="safedata.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="Homeworks\CHomework1.cpp">
+      <Filter>Homeworks</Filter>
+    </ClCompile>
+    <ClCompile Include="Homeworks\CHomework2.cpp">
+      <Filter>Homeworks</Filter>
+    </ClCompile>
+    <ClCompile Include="Homeworks\CHomework3.cpp">
+      <Filter>Homeworks</Filter>
+    </ClCompile>
+    <ClCompile Include="Homeworks\CHomework4.cpp">
+      <Filter>Homeworks</Filter>
+    </ClCompile>
+    <ClCompile Include="Homeworks\CHomework5.cpp">
+      <Filter>Homeworks</Filter>
+    </ClCompile>
+    <ClCompile Include="Homeworks\Homework.cpp">
+      <Filter>Homeworks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Homeworks">
+      <UniqueIdentifier>{c242bf1e-688e-40a8-a637-58838beb2a6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
