@@ -86,13 +86,13 @@ void Filter()
 		std::string line;
 		while (std::getline(oFile, line))
 		{
-			bool isSpace = line.at(0) >= 0x30 && line.at(0) <= 0x39;
+			bool isSpace = line.at(0) < 0x30 && line.at(0) > 0x39;
 			std::string numbers;
 			for (size_t i = 0U; i < line.length(); i++)
 			{
 				if (line.at(i) >= 0x30 && line.at(i) <= 0x39)
 				{
-					if (!(!isSpace && line.at(i) == 0x30))
+					if (isSpace || line.at(i) != 0x30)
 					{
 						numbers += line.at(i);
 						isSpace = true;
