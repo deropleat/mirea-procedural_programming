@@ -152,6 +152,25 @@ void drawFlag()
 
 void drawSinus()
 {
+	std::vector<std::string> lines;
+	for (int i = 0; i < 21; i++)
+	{
+		if (i == 0) lines.push_back(std::string(6U, 0x20) + std::string(109U, '_'));
+		else if (i == 10) lines.push_back(" -pi |" + std::string(109U, '-') + "| pi");
+		else if (i == 20) lines.push_back(std::string(5U, 0x20) + "|" + std::string(54U, '_') + "|" + std::string(54U, '_') + "|");
+		else lines.push_back(std::string(5U, 0x20) + "|" + std::string(54U, 0x20) + "|" + std::string(54U, 0x20) + "|");
+	}
+
+	size_t pos = 6U;
+	for (double i = -180.0; i <= 180.0; i += 360.0 / 109.0) lines[int(lines.size() / 2 - round(sin(ToRadians((int)i)) * 10.0))][pos++] = '*';
+
+	std::cout << std::string(60U, 0x20) << "1" << std::endl;
+	for (size_t i = 0U; i < lines.size(); i++) std::cout << lines.at(i) << std::endl;
+	std::cout << std::string(59U, 0x20) << "-1" << std::endl;
+}
+
+void drawSinusOLD()
+{
 	std::vector<std::string> strings;
 	std::string lastChar;
 	size_t pos = 0U;
@@ -201,6 +220,32 @@ void drawSinus()
 	std::cout << std::string(10U, 0x20) + std::string(43U, 0x5F) + " " << std::endl;
 	for (size_t i = 0U; i < strings.size(); i++) std::cout << " " << (i == 10U ? "x = -pi" : std::string(7U, 0x20)) << " |" << strings.at(i) << (i == 10U ? " x = pi" : "") << std::endl;
 	std::cout << SKIPLINE;
+}
+
+void DrawSinus()
+{
+	std::vector<std::string> lines;
+	for (int i = 0; i < 32; i++)
+	{
+		if (i == 0) lines.push_back(std::string(6U, 0x20) + std::string(109U, 0x5F));
+		else if (i == 16) lines.push_back(" -pi |" + std::string(109U, 0x2D) + "| pi");
+		else if (i == 31) lines.push_back(std::string(5U, 0x20) + "|" + std::string(54U, '_') + "|" + std::string(54U, 0x5F) + "|");
+		else lines.push_back(std::string(5U, 0x20) + "|" + std::string(54U, 0x20) + "|" + std::string(54U, 0x20) + "|");
+	}
+
+	size_t pos = 6U;
+	for (double i = -180.0; i <= 180.0; i += 360.0 / 109.0) lines[int(lines.size() / 2 - round(sin(ToRadians((int)i)) * 10.0))][pos++] = '*';
+	
+	/* If you want to use the tan/ctg or anything else (ctg = 1/tan - USE ONLY THIS FOR IT)
+	for (double i = -180.0; i <= 180.0; i += 2.0) // DO NOT USE 1.0 AS A STEP!!!!!!!
+	{
+		int idx = int(lines.size() / 2 - round(tan(ToRadians((int)i)) * 10.0));
+		if (idx < lines.size() && idx != 0) lines[idx][pos++] = '*';
+	}*/
+
+	std::cout << std::string(59U, 0x20) << "1.5" << std::endl;
+	for (size_t i = 0U; i < lines.size(); i++) std::cout << lines.at(i) << std::endl;
+	std::cout << std::string(58U, 0x20) << "-1.5" << std::endl;
 }
 
 bool isRoman(std::string value)
