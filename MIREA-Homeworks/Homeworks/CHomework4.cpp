@@ -460,7 +460,7 @@ void numSystems()
 			{
 				if (isSystemIn(value, oldb))
 				{
-					std::cout << (isMinus ? "-" : "-") << value << "[" << oldb << "] = " << (isMinus ? "-" : "-") << inSystem(fromSystem(value, oldb), newb) << "[" << newb << "]" << SKIPLINE;
+					std::cout << (isMinus ? "-" : "") << value << "[" << oldb << "] = " << (isMinus ? "-" : "") << inSystem(fromSystem(value, oldb), newb) << "[" << newb << "]" << SKIPLINE;
 					return;
 				}
 			}
@@ -473,7 +473,7 @@ void numSystems()
 					nofloat = inSystem(fromSystem(nofloat, oldb), newb);
 					std::cout << nofloat << fromFloat(floatpart, oldb) << std::endl;
 					floatpart = inSystemFloat(fromFloat(floatpart, oldb), (double)newb);
-					std::cout << (isMinus ? "-" : "-") << value << "[" << oldb << "] = " << (isMinus ? "-" : "-") << nofloat << "." << floatpart << "[" << newb << "]" << SKIPLINE;
+					std::cout << (isMinus ? "-" : "") << value << "[" << oldb << "] = " << (isMinus ? "-" : "") << nofloat << "." << floatpart << "[" << newb << "]" << SKIPLINE;
 					return;
 				}
 			}
