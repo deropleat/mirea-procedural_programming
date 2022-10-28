@@ -115,7 +115,16 @@ std::string Sort(std::string data)
 {
 	std::string ret = "", signs = "";
 
-	for (int i = 0x41; i <= 0x5A; i++) for (size_t j = 0U; j < data.length(); j++) if (data.at(j) == i || data.at(j) == i + 0x20) ret += data.at(j);
+	for (int i = 0x41; i <= 0x5A; i++)
+	{
+		std::string current = "";
+		for (size_t j = 0U; j < data.length(); j++)
+		{
+			if (data.at(j) == i) current = data.at(j) + current;
+			else if (data.at(j) == i + 0x20) current += data.at(j);
+		}
+		ret += current;
+	}
 	for (size_t i = 0U; i < data.length(); i++) if (!(data.at(i) >= 0x41 && data.at(i) <= 0x5A || data.at(i) >= 0x61 && data.at(i) <= 0x7A)) signs += data.at(i);
 
 	return ret + signs;
