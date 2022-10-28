@@ -123,6 +123,13 @@ std::string Sort(std::string data)
 
 void Sort()
 {
+	Input->In("Input the 1 string to sort (the length should be 30 symbols)", 1U);
+
+	std::string resolve = BUFFER(0);
+	if (resolve.length() == 30) std::cout << Sort(parts.at(i).at(j).c_str()) << " ";
+	else INCORRECT(Sort);
+	
+	/* More advanced version of sort
 	Input->In("Input the 1 string to sort (you can use \\n)", 0U, "\\n");
 
 	std::vector<std::vector<std::string>> parts;
@@ -131,8 +138,8 @@ void Sort()
 	{
 		for (size_t j = 0U; j < parts.at(i).size(); j++) std::cout << Sort(parts.at(i).at(j).c_str()) << " ";
 		std::cout << std::endl;
-	}
-
+	} */
+	
 	std::cout << std::endl;
 }
 
