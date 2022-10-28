@@ -97,6 +97,7 @@ void Filter()
 						numbers += line.at(i);
 						isSpace = true;
 					}
+					else numbers += "0 ";
 				}
 				else if (isSpace)
 				{
