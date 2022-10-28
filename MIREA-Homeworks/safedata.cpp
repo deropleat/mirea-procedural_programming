@@ -38,7 +38,7 @@ bool Safety::isBool(std::string value)
 	if (value.length() < 1U) return false;
 
 	ToLower(value);
-	std::vector<std::string> values = { "0", "false", "true" };
+	std::vector<std::string> values = { "0", "false", "1", "true" };
 
 	for (size_t i = 0U; i < values.size(); i++) if (value == values.at(i)) return true;
 	if (isFloat(value)) return true;
